@@ -62,3 +62,18 @@ func (mr *MockUseCaseMockRecorder) CreateRole(input interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateRole", reflect.TypeOf((*MockUseCase)(nil).CreateRole), input)
 }
+
+// FindOneUserData mocks base method
+func (m *MockUseCase) FindOneUserData(input *entities.UsersFilter) (*entities.Users, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindOneUserData", input)
+	ret0, _ := ret[0].(*entities.Users)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindOneUserData indicates an expected call of FindOneUserData
+func (mr *MockUseCaseMockRecorder) FindOneUserData(input interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindOneUserData", reflect.TypeOf((*MockUseCase)(nil).FindOneUserData), input)
+}

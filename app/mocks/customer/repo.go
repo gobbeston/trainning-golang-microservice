@@ -62,3 +62,33 @@ func (mr *MockRepoMockRecorder) CreateRoles(input interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateRoles", reflect.TypeOf((*MockRepo)(nil).CreateRoles), input)
 }
+
+// FindOneUser mocks base method
+func (m *MockRepo) FindOneUser(filter *entities.UsersFilter) (*entities.Users, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindOneUser", filter)
+	ret0, _ := ret[0].(*entities.Users)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindOneUser indicates an expected call of FindOneUser
+func (mr *MockRepoMockRecorder) FindOneUser(filter interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindOneUser", reflect.TypeOf((*MockRepo)(nil).FindOneUser), filter)
+}
+
+// FindOneRole mocks base method
+func (m *MockRepo) FindOneRole(filter *entities.RolesFilter) (*entities.Roles, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindOneRole", filter)
+	ret0, _ := ret[0].(*entities.Roles)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindOneRole indicates an expected call of FindOneRole
+func (mr *MockRepoMockRecorder) FindOneRole(filter interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindOneRole", reflect.TypeOf((*MockRepo)(nil).FindOneRole), filter)
+}

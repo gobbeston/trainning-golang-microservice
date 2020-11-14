@@ -28,3 +28,5 @@ gen
 *.iml
 .DS_Store
 *.log
+/resources/docker/keys/id_rsa
+/resources/docker/keys/id_rsa.pub

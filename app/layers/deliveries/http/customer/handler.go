@@ -19,5 +19,7 @@ func NewEndpointHttpHandler(ginEngine *gin.Engine, customerUseCase customer.UseC
 	{
 		v1.POST("/users", handler.CreateUser)
 		v1.POST("/roles", handler.CreateRoles)
+
+		v1.GET("/users.data", handler.FindOneUserData)
 	}
 }

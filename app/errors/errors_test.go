@@ -1,8 +1,8 @@
 package errors_test
 
 import (
-	"github.com/stretchr/testify/assert"
 	"github.com/gobbeston/trainning-golang-microservice/app/errors"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 

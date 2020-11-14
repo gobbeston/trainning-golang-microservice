@@ -31,3 +31,9 @@ type Users struct {
 	DeletedAt   *time.Time
 	DeletedBy   *string
 }
+
+// UsersFilter for filtering user
+type UsersFilter struct {
+	ID    *uint
+	Email *string
+}

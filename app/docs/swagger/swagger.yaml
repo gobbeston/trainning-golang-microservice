@@ -153,6 +153,56 @@ definitions:
     - roleTypeId
     - statusId
     type: object
+  models.FindOneUserDataResponseJSON:
+    properties:
+      address:
+        example: 92/7 Parkred
+        type: string
+      age:
+        example: "20"
+        type: string
+      birthDate:
+        example: 1999/09/09
+        type: string
+      createdBy:
+        example: N API
+        type: string
+      email:
+        example: tech@mail.co.th
+        type: string
+      firstName:
+        example: tech@mail.co
+        type: string
+      lastName:
+        example: tech@mail.co
+        type: string
+      phoneNumber:
+        example: "+66999999999"
+        type: string
+      provider:
+        example: OWN
+        type: string
+      role:
+        $ref: '#/definitions/models.roleResponse'
+      roleTypeId:
+        example: 1
+        type: integer
+      statusId:
+        example: 1
+        type: integer
+    type: object
+  models.roleResponse:
+    properties:
+      code:
+        example: ADMIN
+        type: string
+      displayName:
+        example: Admin
+        type: string
+      id:
+        example: 1
+        type: integer
+    type: object
   utils.errorResponse:
     properties:
       message:
@@ -238,6 +288,44 @@ paths:
           schema:
             $ref: '#/definitions/utils.errorResponse'
       summary: Create User
+      tags:
+      - users
+  /v1/users.data:
+    get:
+      consumes:
+      - application/json
+      description: Find One a USERS DATA
+      operationId: post-users-find-one-data
+      parameters:
+      - description: for request tracking
+        in: header
+        name: X-Correlation-ID
+        required: true
+        type: string
+      - description: filter from a id
+        in: query
+        name: id
+        type: string
+      - description: filter from a email
+        in: query
+        name: email
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FindOneUserDataResponseJSON'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/utils.errorResponse'
+      summary: Find One USERS DATA
       tags:
       - users
 schemes:

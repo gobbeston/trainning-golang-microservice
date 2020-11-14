@@ -7,10 +7,7 @@ import (
 )
 
 func (r *repo) CreateRoles(input *entities.Roles) (*entities.Roles, error) {
-	model, err := new(models.Roles).ParseRoleToDB(input)
-	if err != nil {
-		return nil, errors.InternalError{Message: err.Error()}
-	}
+	model, _ := new(models.Roles).ParseRoleToDB(input)
 
 	if err := r.Conn.Save(&model).Error; err != nil {
 		return nil, errors.InternalError{Message: err.Error()}

@@ -2,10 +2,10 @@ package customer_test
 
 import (
 	gomocket "github.com/Selvatico/go-mocket"
-	"github.com/pkg/errors"
-	"github.com/stretchr/testify/assert"
 	"github.com/gobbeston/trainning-golang-microservice/app/layers/repositories/customer"
 	testhelper "github.com/gobbeston/trainning-golang-microservice/app/test_helpers"
+	"github.com/pkg/errors"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 

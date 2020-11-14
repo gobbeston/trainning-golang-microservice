@@ -10,3 +10,7 @@ type Roles struct {
 	UpdatedAt   time.Time
 	DeletedAt   *time.Time
 }
+
+type RolesFilter struct {
+	ID *uint
+}

@@ -1,8 +1,8 @@
 package customer
 
 import (
-	"github.com/jinzhu/gorm"
 	"github.com/gobbeston/trainning-golang-microservice/app/entities"
+	"github.com/jinzhu/gorm"
 )
 
 type repo struct {
@@ -17,4 +17,7 @@ func InitRepo(Conn *gorm.DB) Repo {
 type Repo interface {
 	CreateUser(input *entities.Users) (*entities.Users, error)
 	CreateRoles(input *entities.Roles) (*entities.Roles, error)
+
+	FindOneUser(filter *entities.UsersFilter) (*entities.Users, error)
+	FindOneRole(filter *entities.RolesFilter) (*entities.Roles, error)
 }

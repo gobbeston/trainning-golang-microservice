@@ -1,8 +1,8 @@
 package models
 
 import (
-	"github.com/jinzhu/copier"
 	"github.com/gobbeston/trainning-golang-microservice/app/entities"
+	"github.com/jinzhu/copier"
 	"time"
 )
 

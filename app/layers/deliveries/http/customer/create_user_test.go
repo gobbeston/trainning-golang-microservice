@@ -2,12 +2,12 @@ package customer_test
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/golang/mock/gomock"
-	"github.com/stretchr/testify/assert"
 	"github.com/gobbeston/trainning-golang-microservice/app/errors"
 	customerHandler "github.com/gobbeston/trainning-golang-microservice/app/layers/deliveries/http/customer"
 	customerMock "github.com/gobbeston/trainning-golang-microservice/app/mocks/customer"
 	testhelper "github.com/gobbeston/trainning-golang-microservice/app/test_helpers"
+	"github.com/golang/mock/gomock"
+	"github.com/stretchr/testify/assert"
 	"net/http"
 	"net/http/httptest"
 	"strings"

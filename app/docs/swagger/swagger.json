@@ -119,6 +119,63 @@
                     }
                 }
             }
+        },
+        "/v1/users.data": {
+            "get": {
+                "description": "Find One a USERS DATA",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "users"
+                ],
+                "summary": "Find One USERS DATA",
+                "operationId": "post-users-find-one-data",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "for request tracking",
+                        "name": "X-Correlation-ID",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "filter from a id",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "filter from a email",
+                        "name": "email",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.FindOneUserDataResponseJSON"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/utils.errorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/utils.errorResponse"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -323,6 +380,75 @@
                     "example": 1
                 },
                 "statusId": {
+                    "type": "integer",
+                    "example": 1
+                }
+            }
+        },
+        "models.FindOneUserDataResponseJSON": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "example": "92/7 Parkred"
+                },
+                "age": {
+                    "type": "string",
+                    "example": "20"
+                },
+                "birthDate": {
+                    "type": "string",
+                    "example": "1999/09/09"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "example": "N API"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "tech@mail.co.th"
+                },
+                "firstName": {
+                    "type": "string",
+                    "example": "tech@mail.co"
+                },
+                "lastName": {
+                    "type": "string",
+                    "example": "tech@mail.co"
+                },
+                "phoneNumber": {
+                    "type": "string",
+                    "example": "+66999999999"
+                },
+                "provider": {
+                    "type": "string",
+                    "example": "OWN"
+                },
+                "role": {
+                    "$ref": "#/definitions/models.roleResponse"
+                },
+                "roleTypeId": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "statusId": {
+                    "type": "integer",
+                    "example": 1
+                }
+            }
+        },
+        "models.roleResponse": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "example": "ADMIN"
+                },
+                "displayName": {
+                    "type": "string",
+                    "example": "Admin"
+                },
+                "id": {
                     "type": "integer",
                     "example": 1
                 }

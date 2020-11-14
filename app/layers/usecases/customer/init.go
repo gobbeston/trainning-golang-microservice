@@ -19,4 +19,6 @@ func InitUseCase(customerRepository customer.Repo) UseCase {
 type UseCase interface {
 	CreateUser(input *entities.Users) (*entities.Users, error)
 	CreateRole(input *entities.Roles) (*entities.Roles, error)
+
+	FindOneUserData(input *entities.UsersFilter) (*entities.Users, error)
 }
